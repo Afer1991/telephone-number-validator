@@ -37,19 +37,19 @@ h1 {
   border-radius: 50%;
 }
 
-#results-div {
+.screen {
   width: 220px;
   height: 400px;
   background: #DFE0E2;
   text-align: center;
 }
 
-#results-div p {
+.screen p {
   margin: 8px 0;
   font-size: 1.1rem;
 }
 
-#results-div input {
+.screen input {
   text-align: center;
   width: 200px;
   height: 35px;
