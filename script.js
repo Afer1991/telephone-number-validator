@@ -7,14 +7,14 @@ const regex1 = /^[0-9]{10}$/;
 const regex2 = /^(1\s)[0-9]{3}(-|\s)[0-9]{3}(-|\s)[0-9]{4}$/;
 const regex3 = /^1?\s?\([0-9]{3}\)\s?[0-9]{3}-[0-9]{4}$/;
 
-const regexArray = [regex1, regex2];
+const regexArray = [regex1, regex2, regex3];
 
 const isValidNumber = (input) => {
   const isValid = regexArray.some(regex => regex.test(input));
   if (isValid) {
-    results.innerText += `Valid US number: ${input}`;
+    results.innerHTML += `<p class="valid">Valid US number: ${input}</p>`;
   } else {
-    results.innerText += `Invalid US number: ${input}`;
+    results.innerHTML += `<p class="invalid">Invalid US number: ${input}</p>`;
   }
 };
 
