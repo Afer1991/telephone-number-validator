@@ -3,9 +3,11 @@ const results = document.getElementById("results-div");
 const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
 
-const regex1 = /[0-9]{10}/;
+const regex1 = /^[0-9]{10}$/;
+const regex2 = /^(1\s)[0-9]{3}(-|\s)[0-9]{3}(-|\s)[0-9]{4}$/;
+const regex3 = /^1?\s?\([0-9]{3}\)\s?[0-9]{3}-[0-9]{4}$/;
 
-const regexArray = [regex1];
+const regexArray = [regex1, regex2];
 
 const isValidNumber = (input) => {
   const isValid = regexArray.some(regex => regex.test(input));
@@ -25,7 +27,7 @@ const checkNumber = () => {
 };
 
 checkBtn.addEventListener("click", checkNumber);
-checkBtn.addEventListener("keydown", (e) => {
+input.addEventListener("keydown", (e) => {
   if(e.key === "Enter") {
     checkNumber();
   };
